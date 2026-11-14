@@ -8,7 +8,7 @@ pipeline {
             parallel {
                 stage('Uppercase on Development') {
                     agent {
-                        label 'Development'
+                        label 'dev && C'
                     }
                     steps {
                             sh 'gcc -o uppercase uppercase.c'
@@ -17,7 +17,7 @@ pipeline {
                 }
                 stage('Reverse on Development2') {
                     agent {
-                        label 'Development2'
+                        label 'prod && C'
                     }
                     steps {              
                             sh 'gcc -o reverse reverse.c'
